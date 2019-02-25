@@ -76,8 +76,6 @@ type:
 	- `scale`
 	- `rotate`
 	- `skew`
-	- `opacity`
-	- `color`
 
 
 ### Javascript
