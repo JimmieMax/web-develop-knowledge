@@ -277,4 +277,3 @@ function cStairs(n) {
 ```
 
 Updating...
-[Github项目代码，如果觉得有用请star下哦](https://github.com/JimmieMax/web-develop-knowledge)
