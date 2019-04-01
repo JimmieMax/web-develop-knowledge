@@ -81,6 +81,44 @@ type:
 
 #### ES6[参考文档](http://es6.ruanyifeng.com/)
 
+#### 浅拷贝和深拷贝
+
+栈堆，基本数据类型与引用数据类型;
+
+- 基本类型--名值存储在栈内存中
+- 引用数据类型--名存在栈内存中，值存在于堆内存中，但是栈内存会提供一个引用的地址指向堆内存中的值
+
+递归实现深拷贝
+```js
+function deepClone(obj){
+    let objClone = Array.isArray(obj)?[]:{};
+    if(obj && typeof obj==="object"){
+        for(key in obj){
+            if(obj.hasOwnProperty(key)){
+                //判断ojb子元素是否为对象，如果是，递归复制
+                if(obj[key] && typeof obj[key] ==="object"){
+                    objClone[key] = deepClone(obj[key]);
+                }else{
+                    //如果不是，简单复制
+                    objClone[key] = obj[key];
+                }
+            }
+        }
+    }
+    return objClone;
+}
+
+let a=[0,1,[2,3],4],
+    b=deepClone(a);
+a[0]=1;
+a[2][0]=1;
+console.log(a,b);
+```
+
+### TypeScript
+
+#### TypeScript[参考文档](https://www.tslang.cn/)
+
 #### Mock
 
 前后端分离开发 [Mock.js参考文档](http://mockjs.com/)
